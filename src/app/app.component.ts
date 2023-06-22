@@ -9,7 +9,6 @@ import {AppService} from "./app.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
   text = '';
 
   constructor(private oauthService: OAuthService, private appService: AppService) {
@@ -20,7 +19,8 @@ export class AppComponent {
   }
 
   login() {
-    this.oauthService.initCodeFlow();
+    // this.oauthService.initCodeFlow();
+    this.oauthService.initImplicitFlow();
   }
 
   private configure() {
@@ -29,7 +29,7 @@ export class AppComponent {
   }
 
   logout() {
-    // this.oauthService.logOut();
-    this.oauthService.revokeTokenAndLogout()
+    this.oauthService.logOut();
+    // this.oauthService.revokeTokenAndLogout()
   }
 }

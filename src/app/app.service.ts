@@ -12,7 +12,7 @@ export class AppService {
 
   hello(): Observable<string> {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    return this.httpClient.get("localhost:8091/tupper/v1/member/check",
+    return this.httpClient.get("http://localhost:8091/tupper/v1/member/check",
       {headers, responseType: 'text'});
   }
 
